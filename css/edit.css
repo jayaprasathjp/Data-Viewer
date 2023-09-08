@@ -1,0 +1,224 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap");
+
+* {
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+.wrapper1 {
+  max-width: 500px;
+  width: 100%;
+  background: #fff;
+  margin: 50px auto;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.125);
+  padding: 30px;
+  border-radius: 10px;
+}
+
+.focus-input {
+  display: block;
+  position: absolute;
+  border-radius: 25px;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0px 0px 0px 0px;
+  color: rgba(4, 230, 255, 0.898);
+}
+.input:focus + .focus-input {
+  -webkit-animation: anim-shadow 0.5s ease-in-out forwards;
+  animation: anim-shadow 0.5s ease-in-out forwards;
+}
+
+@-webkit-keyframes anim-shadow {
+  to {
+    box-shadow: 0px 0px 70px 25px;
+    opacity: 0;
+  }
+}
+
+@keyframes anim-shadow {
+  to {
+    box-shadow: 0px 0px 70px 25px;
+    opacity: 0;
+  }
+}
+.input:focus + .focus-input + .symbol-input {
+  color: #22d2f1;
+  padding-left: 28px;
+}
+.title {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 25px;
+  color: #40b8e7;
+
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.wrapper1 .form {
+  width: 100%;
+}
+
+.wrapper1 .form .inputfield {
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+}
+
+.wrapper1 .form .inputfield label {
+  width: 200px;
+  color: #757575;
+  margin-right: 10px;
+  font-size: 14px;
+}
+
+.wrapper1 .form .inputfield .input,
+.wrapper1 .form .inputfield .textarea {
+  width: 100%;
+  outline: none;
+  border: 1px solid #d5dbd9;
+  font-size: 15px;
+  padding: 8px 10px;
+  border-radius: 3px;
+  transition: all 0.3s ease;
+}
+
+.wrapper1 .form .inputfield .textarea {
+  width: 100%;
+  height: 125px;
+  resize: none;
+}
+
+.wrapper1 .form .inputfield .custom_select {
+  position: relative;
+  width: 100%;
+  height: 37px;
+}
+
+.wrapper1 .form .inputfield .custom_select:before {
+  content: "";
+  position: absolute;
+  top: 12px;
+  right: 10px;
+  border: 8px solid;
+  border-color: #d5dbd9 transparent transparent transparent;
+  pointer-events: none;
+}
+
+.wrapper1 .form .inputfield .custom_select select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  outline: none;
+  width: 100%;
+  height: 100%;
+  border: 0px;
+  padding: 8px 10px;
+  font-size: 15px;
+  border: 1px solid #d5dbd9;
+  border-radius: 3px;
+}
+
+.wrapper1 .form .inputfield .input:focus,
+.wrapper1 .form .inputfield .textarea:focus,
+.wrapper1 .form .inputfield .custom_select select:focus {
+  border: 1px solid #fec107;
+}
+
+.wrapper1 .form .inputfield p {
+  font-size: 14px;
+  color: #757575;
+}
+.wrapper1 .form .inputfield .check {
+  width: 15px;
+  height: 15px;
+  position: relative;
+  display: block;
+  cursor: pointer;
+}
+.wrapper1 .form .inputfield .check input[type="checkbox"] {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+}
+.wrapper1 .form .inputfield .check .checkmark {
+  width: 15px;
+  height: 15px;
+  border: 1px solid #fec107;
+  display: block;
+  position: relative;
+}
+.wrapper1 .form .inputfield .check .checkmark:before {
+  content: "";
+  position: absolute;
+  top: 1px;
+  left: 2px;
+  width: 5px;
+  height: 2px;
+  border: 2px solid;
+  border-color: transparent transparent #228fdd #228fdd;
+  transform: rotate(-45deg);
+  display: none;
+}
+.wrapper1 .form .inputfield .check input[type="checkbox"]:checked ~ .checkmark {
+  background: #fec107;
+}
+
+.wrapper1
+  .form
+  .inputfield
+  .check
+  input[type="checkbox"]:checked
+  ~ .checkmark:before {
+  display: block;
+}
+
+.wrapper1 .form .inputfield .btn1 {
+  font-size: 15px;
+  border: 0px;
+  height: 35px;
+  width: 100px !important;
+  margin: 10px 0px 10px 0px;
+  background: #fec107;
+  color: #228fdd;
+  cursor: pointer;
+  border-radius: 4px;
+  outline: none;
+}
+.wrapper1 .form .inputfield .btn2 {
+  font-size: 15px;
+  text-align: center;
+  border: 0px;
+  height: 35px;
+  width: 100px !important;
+  margin: 10px 15px 10px 210px;
+  inline-size: 70px;
+  background: red;
+  color: #228fdd;
+  cursor: pointer;
+  border-radius: 4px;
+  outline: none;
+}
+.wrapper1 .form .inputfield .btn1:hover {
+  background: #ffd658;
+}
+.wrapper1 .form .inputfield:last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 420px) {
+  .wrapper1 .form .inputfield {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+  .wrapper1 .form .inputfield label {
+    margin-bottom: 5px;
+  }
+  .wrapper1 .form .inputfield.terms {
+    flex-direction: row;
+  }
+}
